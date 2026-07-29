@@ -131,11 +131,13 @@ public class FormulaApp extends Application {
         String selectedVariable = buttonText[varIndex];
         String[] inputParameters = formula.getInputParameters(selectedVariable);
 
+        // Creates the scene
         GridPane gridPane = new GridPane();
         gridPane.setHgap(10);
         gridPane.setVgap(20);
         gridPane.setAlignment(Pos.CENTER);
 
+        // Create labels using ArrayList as different number of variables for each formula
         ArrayList<TextField> inputFields = new ArrayList<>();
         for (int i = 0; i < inputParameters.length; i++) {
             Label label = new Label(inputParameters[i]);
@@ -145,6 +147,27 @@ public class FormulaApp extends Application {
             gridPane.add(label, 0, i);
             gridPane.add(input, 1, i);
         }
+
+        // Compute button
+        Button buttonCompute = new Button("Compute");
+
+        // Result display field
+        TextField resultField = new TextField();
+        resultField.setEditable(false);
+
+        buttonCompute.setOnAction(e -> {
+            try {String[] args = new String[inputFields.size()];
+                for (int i = 0; i < inputFields.size(); i++) {
+                    args[i] = inputFields.get(i).getText();
+                }
+                double result = formula.compute(selectedVariable, args);
+                resultField.setText(String.format("%.2f", result));
+            } catch (NumberFormatException ex) {
+                resultField.setText("Invalid input");
+            }
+        });
+
+        Button buttonClose = new Button("Exit to Selection");
 
         // Create labels with textfields
         Label lblLength = new Label(buttonText[varIndex++ % 4]);
