@@ -19,6 +19,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.ArrayList;
+
 import static javafx.stage.Modality.WINDOW_MODAL;
 
 
@@ -126,6 +128,24 @@ public class FormulaApp extends Application {
         lastStage.initOwner(stage);
         lastStage.initModality(WINDOW_MODAL);
 
+        String selectedVariable = buttonText[varIndex];
+        String[] inputParameters = formula.getInputParameters(selectedVariable);
+
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(10);
+        gridPane.setVgap(20);
+        gridPane.setAlignment(Pos.CENTER);
+
+        ArrayList<TextField> inputFields = new ArrayList<>();
+        for (int i = 0; i < inputParameters.length; i++) {
+            Label label = new Label(inputParameters[i]);
+            TextField input = new TextField();
+            input.setPromptText("Enter Value");
+            inputFields.add(input);
+            gridPane.add(label, 0, i);
+            gridPane.add(input, 1, i);
+        }
+
         // Create labels with textfields
         Label lblLength = new Label(buttonText[varIndex++ % 4]);
         firstInput = new TextField("0.0");
@@ -178,6 +198,4 @@ public class FormulaApp extends Application {
         lastStage.initStyle(StageStyle.UNDECORATED);
         lastStage.show();
     }
-
-
 }
