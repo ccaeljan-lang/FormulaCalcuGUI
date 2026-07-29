@@ -61,6 +61,26 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.5), 10, 0.4, 0, 0);
 }
 
+.compute-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 55px;
+    -fx-background-color: #00b8d4;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #07111f;
+    -fx-font-size: 15pt;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.compute-button:hover {
+    -fx-background-color: #00e5ff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.7), 15, 0.5, 0, 0);
+}
+
+
+
+
+
 .button {
   -fx-pref-width: 400px;
   -fx-background-color: #4CAF50; /* Green */
