@@ -96,4 +96,9 @@ public class Coulomb implements IFormula {
     public String[] getParameterList() {
         return parameterList;
     }
+
+    @Override
+    public String[] getInputParameters(String variable) {
+        return new String[]{""};
+    }
 }
