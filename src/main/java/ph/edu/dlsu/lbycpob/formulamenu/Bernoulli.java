@@ -70,6 +70,35 @@ public class Bernoulli implements IFormula{
         h2 = ((p1 - p2) / (density * g)) + ((v1 * v1 - v2 * v2) / (2 * g)) + h1;
     }
 
+    // --- IFormula Interface Methods ---
+
+    @Override
+    public double compute(String variable, String[] values) {
+        if (variable == null || values == null || values.length < 6) {
+            return 0;
+        }
+
+        try {
+            if (variable.equalsIgnoreCase("P1")) {
+                p2 = Double.parseDouble(values[0]);
+                density = Double.parseDouble(values[1]);
+                v1 = Double.parseDouble(values[2]);
+                v2 = Double.parseDouble(values[3]);
+                h1 = Double.parseDouble(values[4]);
+                h2 = Double.parseDouble(values[5]);
+                computeP1();
+                return p1;
+
+            } else if (variable.equalsIgnoreCase("P2")) {
+                p1 = Double.parseDouble(values[0]);
+                density = Double.parseDouble(values[1]);
+                v1 = Double.parseDouble(values[2]);
+                v2 = Double.parseDouble(values[3]);
+                h1 = Double.parseDouble(values[4]);
+                h2 = Double.parseDouble(values[5]);
+                computeP2();
+                return p2;
+
     @Override
     public double compute(String variable, String[] values) {
         return 0.0;
