@@ -1,22 +1,13 @@
 package ph.edu.dlsu.lbycpob.formulamenu;
 
-public class ShannonCapacity implements IFormula{
+public class ShannonCapacity implements IFormula {
+    private final String[] parameterList = {"Capacity", "Bandwidth", "Signal Power", "Noise Power"};
+
+    private double capacity;
+    private double bandwidth;
+    private double signalPower;
+    private double noisePower;
+
     public ShannonCapacity() {
-
-    }
-
-    @Override
-    public double compute(String variable, String[] values) {
-        return 0.0;
-    }
-
-    @Override
-    public String[] getParameterList() {
-        return new String[]{""};
-    }
-
-    @Override
-    public String[] getInputParameters(String variable) {
-        return new String[]{""};
     }
 }
