@@ -38,4 +38,36 @@ public class ShannonCapacity implements IFormula {
     public void computeNoisePower() {
         noisePower = signalPower / (Math.pow(2, capacity / bandwidth) - 1);
     }
+
+    @Override
+    public double compute(String variable, String[] values) {
+        if (variable == null) return 0;
+
+        if (variable.equalsIgnoreCase("Capacity")) {
+            bandwidth = Double.parseDouble(values[0]);
+            signalPower = Double.parseDouble(values[1]);
+            noisePower = Double.parseDouble(values[2]);
+            computeCapacity();
+            return capacity;
+        } else if (variable.equalsIgnoreCase("Bandwidth")) {
+            capacity = Double.parseDouble(values[0]);
+            signalPower = Double.parseDouble(values[1]);
+            noisePower = Double.parseDouble(values[2]);
+            computeBandwidth();
+            return bandwidth;
+        } else if (variable.equalsIgnoreCase("Signal Power")) {
+            capacity = Double.parseDouble(values[0]);
+            bandwidth = Double.parseDouble(values[1]);
+            noisePower = Double.parseDouble(values[2]);
+            computeSignalPower();
+            return signalPower;
+        } else if (variable.equalsIgnoreCase("Noise Power")) {
+            capacity = Double.parseDouble(values[0]);
+            bandwidth = Double.parseDouble(values[1]);
+            signalPower = Double.parseDouble(values[2]);
+            computeNoisePower();
+            return noisePower;
+        }
+        return 0;
+    }
 }
