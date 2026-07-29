@@ -155,6 +155,7 @@ public class FormulaApp extends Application {
         TextField resultField = new TextField();
         resultField.setEditable(false);
 
+        // Button action for computation
         buttonCompute.setOnAction(e -> {
             try {String[] args = new String[inputFields.size()];
                 for (int i = 0; i < inputFields.size(); i++) {
@@ -167,65 +168,25 @@ public class FormulaApp extends Application {
             }
         });
 
+        // Button close action
         Button buttonClose = new Button("Exit to Selection");
-
         buttonClose.setOnAction(e -> lastStage.close());
 
+        // Adding the buttons, labels, adn fields on the grid pane
         int resultRow = inputParameters.length;
-
         gridPane.add(buttonCompute, 1, resultRow);
         gridPane.add(new Label(selectedVariable), 0, resultRow + 1);
         gridPane.add(resultField, 1, resultRow + 1);
         gridPane.add(buttonClose, 1, resultRow + 2);
 
-        // Create labels with textfields
-        Label lblLength = new Label(buttonText[varIndex++ % 4]);
-        firstInput = new TextField("0.0");
-        Label lblWidth = new Label(buttonText[varIndex++ % 4]);
-        secondInput = new TextField("0.0");
-        Label lblHeight = new Label(buttonText[varIndex++ % 4]);
-        thirdInput = new TextField("0.0");
-        Label lblResult = new Label(buttonText[varIndex % 4]);
-        lblResultValue = new TextField("0.0");
-        lblResultValue.setEditable(false);
-
-        // Create button nodes
-        final int query = varIndex % 4;
-        Button btnCompute = new Button("Compute");
-        Button btnClose = new Button("Exit to Selection");
-        btnCompute.setOnAction(e -> {
-            String[] args = {firstInput.getText(), secondInput.getText(), thirdInput.getText()};
-            lblResultValue.setText(String.format("%.2f", formula.compute(buttonText[query], args)));
-        });
-        btnClose.setOnAction(e -> lastStage.close());
-
-        // Create the scene
-        GridPane gridPane = new GridPane();
-        gridPane.setHgap(10);
-        gridPane.setVgap(20);
-        gridPane.add(new HBox(lblLength), 0, 0);
-        gridPane.add(firstInput, 1, 0);
-        gridPane.add(new HBox(lblWidth), 0, 1);
-        gridPane.add(secondInput, 1, 1);
-        gridPane.add(new HBox(lblHeight), 0, 2);
-        gridPane.add(thirdInput, 1, 2);
-        gridPane.add(btnCompute, 1, 3);
-        gridPane.add(new HBox(lblResult), 0, 4);
-        gridPane.add(lblResultValue, 1, 4);
-        gridPane.add(btnClose, 1, 5);
-        gridPane.setAlignment(Pos.CENTER);
-
+        // Vertical box grid pane
         VBox root = new VBox(gridPane);
-        root.setSpacing(20);
         root.setAlignment(Pos.CENTER);
+        root.setSpacing(20);
 
         Scene scene = new Scene(root, screenWidth / 2, screenHeight);
-        if (!isLogicOnly) {
-            scene.getStylesheets().add("mystyle.css");
-//            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
-        }
+        scene.getStylesheets().add(getClass().getResource("/mystyle.css").toExternalForm());
 
-        // Set the final stage
         lastStage.setScene(scene);
         lastStage.initStyle(StageStyle.UNDECORATED);
         lastStage.show();
