@@ -70,4 +70,9 @@ public class ShannonCapacity implements IFormula {
         }
         return 0;
     }
+
+    @Override
+    public String[] getParameterList() {
+        return parameterList;
+    }
 }
