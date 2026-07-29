@@ -22,4 +22,20 @@ public class ShannonCapacity implements IFormula {
 
     public double getNoisePower() { return noisePower; }
     public void setNoisePower(double noisePower) { this.noisePower = noisePower; }
+
+    public void computeCapacity() {
+        capacity = bandwidth * (Math.log(1 + (signalPower / noisePower)) / Math.log(2));
+    }
+
+    public void computeBandwidth() {
+        bandwidth = capacity / (Math.log(1 + (signalPower / noisePower)) / Math.log(2));
+    }
+
+    public void computeSignalPower() {
+        signalPower = noisePower * (Math.pow(2, capacity / bandwidth) - 1);
+    }
+
+    public void computeNoisePower() {
+        noisePower = signalPower / (Math.pow(2, capacity / bandwidth) - 1);
+    }
 }
