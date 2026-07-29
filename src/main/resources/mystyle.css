@@ -77,24 +77,22 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.7), 15, 0.5, 0, 0);
 }
 
-
-
-
-
-.button {
-  -fx-pref-width: 400px;
-  -fx-background-color: #4CAF50; /* Green */
-  -fx-border: none;
-  -fx-color: white;
-  -fx-padding: 15px 32px;
-  -fx-text-fill: #ffffff;
-  -fx-text-align: center;
-  -fx-text-decoration: none;
-  -fx-display: inline-block;
-  -fx-font-size: 16pt;
-  -fx-font-weight: bold;
+.back-button {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 45px;
+    -fx-background-color: transparent;
+    -fx-border-color: #55758f;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #8aa4bd;
+    -fx-font-size: 11pt;
+    -fx-cursor: hand;
 }
-.label {
-  -fx-text-fill: #ffffff;
-  -fx-effect: dropshadow(three-pass-box, white, 20, 0, 0, 0);
+
+.back-button:hover {
+    -fx-background-color: #162d42;
+    -fx-border-color: #00e5ff;
+    -fx-text-fill: #00e5ff;
 }
+
