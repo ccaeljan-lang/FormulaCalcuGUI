@@ -99,6 +99,26 @@ public class Bernoulli implements IFormula{
                 computeP2();
                 return p2;
 
+            } else if (variable.equalsIgnoreCase("Density")) {
+                p1 = Double.parseDouble(values[0]);
+                p2 = Double.parseDouble(values[1]);
+                v1 = Double.parseDouble(values[2]);
+                v2 = Double.parseDouble(values[3]);
+                h1 = Double.parseDouble(values[4]);
+                h2 = Double.parseDouble(values[5]);
+                computeDensity();
+                return density;
+
+            } else if (variable.equalsIgnoreCase("V1")) {
+                p1 = Double.parseDouble(values[0]);
+                p2 = Double.parseDouble(values[1]);
+                density = Double.parseDouble(values[2]);
+                v2 = Double.parseDouble(values[3]);
+                h1 = Double.parseDouble(values[4]);
+                h2 = Double.parseDouble(values[5]);
+                computeV1();
+                return v1;
+
     @Override
     public double compute(String variable, String[] values) {
         return 0.0;
