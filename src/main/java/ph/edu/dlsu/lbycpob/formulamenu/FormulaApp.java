@@ -84,7 +84,7 @@ public class FormulaApp extends Application {
     private void handleFormula(Stage primaryStage, int formulaID) {
         Stage stage = new Stage();
 
-        formula = (formulaID == 1) ? new ShannonCapacity() : new Bernoulli();
+        formula = (formulaID == 1) ? new Bernoulli() : new ShannonCapacity();
         buttonText = formula.getParameterList();
 
         // Label
@@ -113,8 +113,7 @@ public class FormulaApp extends Application {
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
-            scene.getStylesheets().add("mystyle.css");
-//            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
         }
 
         stage.initOwner(primaryStage);
@@ -157,6 +156,7 @@ public class FormulaApp extends Application {
         // Result display field
         TextField resultField = new TextField();
         resultField.setEditable(false);
+        resultField.getStyleClass().add("result-field");
 
         // Button action for computation
         buttonCompute.setOnAction(e -> {
