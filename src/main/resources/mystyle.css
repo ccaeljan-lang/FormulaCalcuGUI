@@ -2,7 +2,7 @@
 .root{
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14pt;
-    -fx-background-image: url("witcher.jpg");
+    -fx-background-image: url("gojo.jpeg");
     -fx-background-repeat: stretch;
     -fx-background-position: top left;
     -fx-background-size: cover, auto;
@@ -80,7 +80,7 @@
 .back-button {
     -fx-pref-width: 300px;
     -fx-pref-height: 45px;
-    -fx-background-color: transparent;
+    -fx-background-color: #dceaf3;
     -fx-border-color: #55758f;
     -fx-border-width: 1px;
     -fx-border-radius: 4px;
@@ -99,7 +99,7 @@
 .exit-button {
     -fx-pref-width: 250px;
     -fx-pref-height: 50px;
-    -fx-background-color: transparent;
+    -fx-background-color: #ffd6df;
     -fx-border-color: #ff5577;
     -fx-border-width: 1.5px;
     -fx-border-radius: 4px;
