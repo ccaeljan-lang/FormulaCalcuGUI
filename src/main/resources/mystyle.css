@@ -132,3 +132,20 @@
     -fx-border-color: #00e5ff;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.4), 10, 0.3, 0, 0);
 }
+
+.result-label {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+.result-field {
+    -fx-background-color: #102a3d;
+    -fx-border-color: #00e5ff;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 16pt;
+    -fx-font-weight: bold;
+}
