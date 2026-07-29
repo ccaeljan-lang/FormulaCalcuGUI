@@ -14,6 +14,16 @@ public class Bernoulli implements IFormula{
             "H2"
     };
 
+    private double p1;
+    private double p2;
+    private double density;
+    private double v1;
+    private double v2;
+    private double h1;
+    private double h2;
+
+    private final double g = 9.81;
+
     @Override
     public double compute(String variable, String[] values) {
         return 0.0;
