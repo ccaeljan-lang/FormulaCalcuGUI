@@ -49,8 +49,8 @@ public class FormulaApp extends Application {
         screenHeight = screen.getHeight();
 
         // Create buttons
-        Button btnOne = new Button("Formula 1: Box Volume");
-        Button btnTwo = new Button("Formula 2: Coulombs Law");
+        Button btnOne = new Button("Formula 1: Bernoulli's Equation");
+        Button btnTwo = new Button("Formula 2: Shannon Channel Capacity");
         Button btnClose = new Button("Exit");
 
         // Set button handlers
