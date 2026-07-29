@@ -114,3 +114,21 @@
     -fx-background-color: #ff5577;
     -fx-text-fill: #07111f;
 }
+
+.text-field {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 42px;
+    -fx-background-color: #0b1d30;
+    -fx-border-color: #315a78;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #e8f7ff;
+    -fx-prompt-text-fill: #55758f;
+    -fx-font-size: 13pt;
+}
+
+.text-field:focused {
+    -fx-border-color: #00e5ff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.4), 10, 0.3, 0, 0);
+}
