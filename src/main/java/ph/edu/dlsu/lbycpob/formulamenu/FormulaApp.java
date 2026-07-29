@@ -93,12 +93,19 @@ public class FormulaApp extends Application {
         root.setSpacing(20);
         root.getChildren().addAll(menu);
 
+        // Dynamically create buttons since Shannon formula has 6 variables
+        // and bernoulli has 4.
         for (int i = 0; i < buttonText.length; i++) {
             final int index = i;
             Button button = new Button("Compute " + buttonText[i]);
             button.setOnAction(e -> handleVariable(stage, index));
             root.getChildren().add(button);
         }
+
+        // Back to Main Menu button
+        Button btnClose = new Button("Back to Main Menu");
+        btnClose.setOnAction(e -> stage.close());
+        root.getChildren().add(btnClose);
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
