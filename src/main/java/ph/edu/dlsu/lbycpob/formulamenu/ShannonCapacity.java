@@ -75,4 +75,18 @@ public class ShannonCapacity implements IFormula {
     public String[] getParameterList() {
         return parameterList;
     }
+
+    @Override
+    public String[] getInputParameters(String variable) {
+        if (variable.equalsIgnoreCase("Capacity")) {
+            return new String[]{"Bandwidth (Hz)", "Signal Power (W)", "Noise Power (W)"};
+        } else if (variable.equalsIgnoreCase("Bandwidth")) {
+            return new String[]{"Capacity (bps)", "Signal Power (W)", "Noise Power (W)"};
+        } else if (variable.equalsIgnoreCase("Signal Power")) {
+            return new String[]{"Capacity (bps)", "Bandwidth (Hz)", "Noise Power (W)"};
+        } else if (variable.equalsIgnoreCase("Noise Power")) {
+            return new String[]{"Capacity (bps)", "Bandwidth (Hz)", "Signal Power (W)"};
+        }
+        return new String[]{""};
+    }
 }
