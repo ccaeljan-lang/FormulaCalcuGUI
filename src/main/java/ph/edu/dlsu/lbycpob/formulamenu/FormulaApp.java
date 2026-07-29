@@ -82,24 +82,8 @@ public class FormulaApp extends Application {
     private void handleFormula(Stage primaryStage, int formulaID) {
         Stage stage = new Stage();
 
-        formula = (formulaID == 1) ? new Volume() : new Coulomb();
+        formula = (formulaID == 1) ? new ShannonCapacity() : new Bernoulli();
         buttonText = formula.getParameterList();
-
-        // Create buttons
-        Button btnFirst = new Button("Compute " + buttonText[3]);
-        btnFirst.setOnAction(e -> handleVariable(stage, 0));
-
-        Button btnSecond = new Button("Compute " + buttonText[0]);
-        btnSecond.setOnAction(e -> handleVariable(stage, 1));
-
-        Button btnThird = new Button("Compute " + buttonText[1]);
-        btnThird.setOnAction(e -> handleVariable(stage, 2));
-
-        Button btnFourth = new Button("Compute " + buttonText[2]);
-        btnFourth.setOnAction(e -> handleVariable(stage, 3));
-
-        Button btnClose = new Button("Go Back To Main");
-        btnClose.setOnAction(e -> stage.close());
 
         // Label
         Label menu = new Label("VARIABLE MENU");
@@ -107,7 +91,14 @@ public class FormulaApp extends Application {
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
-        root.getChildren().addAll(menu, btnFirst, btnSecond, btnThird, btnFourth, btnClose);
+        root.getChildren().addAll(menu);
+
+        for (int i = 0; i < buttonText.length; i++) {
+            final int index = i;
+            Button button = new Button("Compute " + buttonText[i]);
+            button.setOnAction(e -> handleVariable(stage, index));
+            root.getChildren().add(button);
+        }
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
