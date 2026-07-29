@@ -1,14 +1,40 @@
 /* mystyle.css */
 .root{
-    -fx-font-size: 16pt;
-    -fx-font-family: "Palatino Linotype";
-    -fx-base: rgb(132, 145, 47);
-    -fx-background: rgb(225, 228, 203);
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14pt;
     -fx-background-image: url("witcher.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: top left;
     -fx-background-size: cover, auto;
 }
+
+.label {
+    -fx-text-fill: #b9cfe0;
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+}
+
+.formula-button {
+    -fx-pref-width: 420px;
+    -fx-pref-height: 65px;
+    -fx-background-color: #0d2035;
+    -fx-border-color: #00e5ff;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 15pt;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.formula-button:hover {
+    -fx-background-color: #103b52;
+    -fx-border-color: #5ff3ff;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.6), 15, 0.4, 0, 0);
+}
+
 .button {
   -fx-pref-width: 400px;
   -fx-background-color: #4CAF50; /* Green */
