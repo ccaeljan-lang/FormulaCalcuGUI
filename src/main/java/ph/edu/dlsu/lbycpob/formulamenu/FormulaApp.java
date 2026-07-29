@@ -169,6 +169,15 @@ public class FormulaApp extends Application {
 
         Button buttonClose = new Button("Exit to Selection");
 
+        buttonClose.setOnAction(e -> lastStage.close());
+
+        int resultRow = inputParameters.length;
+
+        gridPane.add(buttonCompute, 1, resultRow);
+        gridPane.add(new Label(selectedVariable), 0, resultRow + 1);
+        gridPane.add(resultField, 1, resultRow + 1);
+        gridPane.add(buttonClose, 1, resultRow + 2);
+
         // Create labels with textfields
         Label lblLength = new Label(buttonText[varIndex++ % 4]);
         firstInput = new TextField("0.0");
