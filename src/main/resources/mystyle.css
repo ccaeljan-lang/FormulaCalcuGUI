@@ -96,3 +96,21 @@
     -fx-text-fill: #00e5ff;
 }
 
+.exit-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 50px;
+    -fx-background-color: transparent;
+    -fx-border-color: #ff5577;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #ff5577;
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.exit-button:hover {
+    -fx-background-color: #ff5577;
+    -fx-text-fill: #07111f;
+}
