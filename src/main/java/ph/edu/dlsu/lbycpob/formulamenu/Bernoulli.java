@@ -157,17 +157,25 @@ public class Bernoulli implements IFormula{
     }
 
     @Override
-    public double compute(String variable, String[] values) {
-        return 0.0;
-    }
-
-    @Override
     public String[] getParameterList() {
-        return new String[]{""};
+        return parameterList;
     }
 
     @Override
     public String[] getInputParameters(String variable) {
-        return new String[]{""};
+        if (variable == null) return new String[0];
+
+        String[] inputs = new String[6];
+        int index = 0;
+
+        for (String param : parameterList) {
+            if (!param.equalsIgnoreCase(variable)) {
+                if (index < 6) {
+                    inputs[index] = param;
+                    index++;
+                }
+            }
+        }
+        return inputs;
     }
 }
