@@ -35,6 +35,32 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.6), 15, 0.4, 0, 0);
 }
 
+.formula-button:pressed {
+    -fx-background-color: #00a8bd;
+    -fx-text-fill: #07111f;
+}
+
+.variable-button {
+    -fx-pref-width: 380px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #0b1d30;
+    -fx-border-color: #2277aa;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #b9eaff;
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.variable-button:hover {
+    -fx-background-color: #123954;
+    -fx-border-color: #00e5ff;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 229, 255, 0.5), 10, 0.4, 0, 0);
+}
+
 .button {
   -fx-pref-width: 400px;
   -fx-background-color: #4CAF50; /* Green */
