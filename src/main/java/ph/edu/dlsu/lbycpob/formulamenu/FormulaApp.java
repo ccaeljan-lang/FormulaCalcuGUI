@@ -113,7 +113,7 @@ public class FormulaApp extends Application {
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
-            scene.getStylesheets().add(getClass().getResource("resources/mystyle.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("/mystyle.css").toExternalForm());
         }
 
         stage.initOwner(primaryStage);
