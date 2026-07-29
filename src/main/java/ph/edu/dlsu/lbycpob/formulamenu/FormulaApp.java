@@ -175,7 +175,7 @@ public class FormulaApp extends Application {
         // Adding the buttons, labels, adn fields on the grid pane
         int resultRow = inputParameters.length;
         gridPane.add(buttonCompute, 1, resultRow);
-        gridPane.add(new Label(selectedVariable), 0, resultRow + 1);
+        gridPane.add(new Label("Result:"), 0, resultRow + 1);
         gridPane.add(resultField, 1, resultRow + 1);
         gridPane.add(buttonClose, 1, resultRow + 2);
 
@@ -184,9 +184,11 @@ public class FormulaApp extends Application {
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
 
+        // Adding of CSS Style
         Scene scene = new Scene(root, screenWidth / 2, screenHeight);
         scene.getStylesheets().add(getClass().getResource("/mystyle.css").toExternalForm());
 
+        // Configuration stage
         lastStage.setScene(scene);
         lastStage.initStyle(StageStyle.UNDECORATED);
         lastStage.show();
