@@ -1,9 +1,6 @@
-package ph.edu.dlsu.lbycpob.formulamenu;/*
-@author cobalt-mkc
-date created: 8/5/2019
-last modified: 8/17/2022
- */
+package ph.edu.dlsu.lbycpob.formulamenu;
 
+import javafx.fxml.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
@@ -13,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -54,6 +50,11 @@ public class FormulaApp extends Application {
         Button btnOne = new Button("Formula 1: Bernoulli's Equation");
         Button btnTwo = new Button("Formula 2: Shannon Channel Capacity");
         Button btnClose = new Button("Exit");
+
+        // Adding of CSS styles
+        btnOne.getStyleClass().add("formula-button");
+        btnTwo.getStyleClass().add("formula-button");
+        btnClose.getStyleClass().add("exit-button");
 
         // Set button handlers
         btnOne.setOnAction(e -> handleFormula(primaryStage, 1));
@@ -100,14 +101,16 @@ public class FormulaApp extends Application {
         for (int i = 0; i < buttonText.length; i++) {
             final int index = i;
             Button button = new Button("Compute " + buttonText[i]);
+            button.getStyleClass().add("variable-button");
             button.setOnAction(e -> handleVariable(stage, index));
             root.getChildren().add(button);
         }
 
         // Back to Main Menu button
-        Button btnClose = new Button("Back to Main Menu");
-        btnClose.setOnAction(e -> stage.close());
-        root.getChildren().add(btnClose);
+        Button buttonClose = new Button("Back to Main Menu");
+        buttonClose.getStyleClass().add("back-button");
+        buttonClose.setOnAction(e -> stage.close());
+        root.getChildren().add(buttonClose);
 
         Scene scene = new Scene(root, screenWidth, screenHeight);
         if (!isLogicOnly) {
