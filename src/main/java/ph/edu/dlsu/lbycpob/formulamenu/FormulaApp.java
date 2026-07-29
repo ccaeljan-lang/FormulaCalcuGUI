@@ -1,6 +1,5 @@
 package ph.edu.dlsu.lbycpob.formulamenu;
 
-import javafx.fxml.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
@@ -153,6 +152,7 @@ public class FormulaApp extends Application {
 
         // Compute button
         Button buttonCompute = new Button("Compute");
+        buttonCompute.getStyleClass().add("compute-button");
 
         // Result display field
         TextField resultField = new TextField();
@@ -172,13 +172,16 @@ public class FormulaApp extends Application {
         });
 
         // Button close action
-        Button buttonClose = new Button("Exit to Selection");
+        Button buttonClose = new Button("Back to Selection");
+        buttonClose.getStyleClass().add("back-button");
         buttonClose.setOnAction(e -> lastStage.close());
 
         // Adding the buttons, labels, adn fields on the grid pane
         int resultRow = inputParameters.length;
         gridPane.add(buttonCompute, 1, resultRow);
-        gridPane.add(new Label("Result:"), 0, resultRow + 1);
+        Label resultLabel = new Label("RESULT:");
+        resultLabel.getStyleClass().add("result-label");
+        gridPane.add(resultLabel, 0, resultRow + 1);
         gridPane.add(resultField, 1, resultRow + 1);
         gridPane.add(buttonClose, 1, resultRow + 2);
 
